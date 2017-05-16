@@ -1,6 +1,8 @@
 #ifndef ARDUINOLIB_H
 #define ARDUINOLIB_H
 
+#include <Arduino.h>
+
 #define AL_HIGH 32767
 #define AL_LOW -32768
 
