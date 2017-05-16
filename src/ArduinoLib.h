@@ -31,7 +31,7 @@ class Pin{
         else if(value==AL_LOW)
             digitalWrite(this->pin,LOW);
         else
-            analogeWrite(this->pin,value);
+            analogWrite(this->pin,value);
     }
 }
 #endif
