@@ -3,37 +3,74 @@
 
 #include <Arduino.h>
 
-#define AL_HIGH 32767
-#define AL_LOW -32768
-
-
-#define AL_ANALOG_MIN 0
-#define AL_ANALOG_MAX 255
-
 class Pin{
     private:
     
     Pin(){}
     
     int pin;
+    int mode;
     
     public:
     
     Pin(int pin){
         this->pin=pin;
+        setMode(INPUT);
     }
     
-    int read(){
-        
+    Pin(int pin,int mode){
+        this->pin=pin;
+        setMode(mode);
     }
     
-    void write(int value){
-        if(value==AL_HIGH)
-            digitalWrite(this->pin,HIGH);
-        else if(value==AL_LOW)
-            digitalWrite(this->pin,LOW);
-        else
-            analogWrite(this->pin,value);
+    int getPin(){
+        return this->pin;
     }
-}
+    
+    void setMode(int mode){
+        this->mode=mode;
+        pinMode(this->pin,mode);
+    }
+    
+    int getAnalog(){
+        return analogRead(this->pin);
+    }
+    
+    void setAnalog(int value){
+        analogWrite(this->pin,value);
+    }
+    
+    void setHigh(){
+        digitalWrite(this->pin,HIGH);
+    }
+    
+    void setLow(){
+        digitalWrite(this->pin,LOW);
+    }
+    
+    bool isHigh(){
+        return digitalRead(this->pin)==HIGH;
+    }
+    
+    bool isLow(){
+        return digitalRead(this->pin)==LOW;
+    }
+    
+    void waitTillHigh(){
+        while(isLow());
+    }
+    
+    void waitTillLow(){
+        while(isHigh());
+    }
+};
+class Motor{
+    private:
+    
+    Motor(){}
+    
+    public:
+    
+    
+};
 #endif

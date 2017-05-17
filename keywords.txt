@@ -16,5 +16,13 @@ Pin KEYWORD1
 # Methods and Functions (KEYWORD2)
 #######################################
 
-read KEYWORD2
-write KEYWORD2
+getPin KEYWORD2
+setMode KEYWORD2
+setHigh KEYWORD2
+setLow KEYWORD2
+setAnalog KEYWORD2
+isHigh KEYWORD2
+isLow KEYWORD2
+getAnalog KEYWORD2
+waitTillHigh KEYWORD2
+waitTillLow KEYWORD2
