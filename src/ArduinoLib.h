@@ -40,6 +40,14 @@ class Pin{
         analogWrite(this->pin,value);
     }
     
+    int getDigital(){
+        return digitalRead(this->pin,value);
+    }
+    
+    void setDigital(int value){
+        digitalWrite(this->pin,value);
+    }
+    
     void setHigh(){
         digitalWrite(this->pin,HIGH);
     }
@@ -64,13 +72,35 @@ class Pin{
         while(isHigh());
     }
 };
+
+#define MOTOR_FORWARD 0X01
+#define MOTOR_BACKWARD 0X00
+
 class Motor{
     private:
     
     Motor(){}
     
+    Pin directionPin;
+    Pin speedPin;
+    
     public:
     
+    Motor(int directionPin,int speedPin){
+        this->directionPin=Pin(directionPin,OUTPUT);
+        this->speedPin=Pin(speedPin,OUTPUT);
+    }
     
+    void setDirection(int direction){
+        directionPin.setDigital(direction);
+    }
+    
+    void setSpeed(int speed){
+        speedPin.setAnalog(speed);
+    }
+    
+    void stop(){
+        setSpeed(0);
+    }
 };
 #endif

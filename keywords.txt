@@ -1,5 +1,5 @@
 #######################################
-# Syntax Coloring Map of kjArduino
+# Syntax Coloring Map of ArduinoLib
 #######################################
 
 #######################################
@@ -7,6 +7,7 @@
 #######################################
 
 Pin KEYWORD1
+Motor KEYWORD1
 
 #######################################
 # Datatypes (KEYWORD2)
@@ -16,6 +17,7 @@ Pin KEYWORD1
 # Methods and Functions (KEYWORD2)
 #######################################
 
+#Pin
 getPin KEYWORD2
 setMode KEYWORD2
 setHigh KEYWORD2
@@ -24,5 +26,19 @@ setAnalog KEYWORD2
 isHigh KEYWORD2
 isLow KEYWORD2
 getAnalog KEYWORD2
+setDigital KEYWORD2
+getDigital KEYWORD2
 waitTillHigh KEYWORD2
 waitTillLow KEYWORD2
+
+#Motor
+setDirection KEYWORD2
+setSpeed KEYWORD2
+stop KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+MOTOR_FORWARD LITERAL1
+MOTOR_BACKWARD LITERAL1
