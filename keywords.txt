@@ -6,8 +6,8 @@
 # Class (KEYWORD1)
 #######################################
 
-Pin KEYWORD1
-Motor KEYWORD1
+Pin	KEYWORD1
+Motor	KEYWORD1
 
 #######################################
 # Datatypes (KEYWORD2)
@@ -18,27 +18,27 @@ Motor KEYWORD1
 #######################################
 
 #Pin
-getPin KEYWORD2
-setMode KEYWORD2
-setHigh KEYWORD2
-setLow KEYWORD2
-setAnalog KEYWORD2
-isHigh KEYWORD2
-isLow KEYWORD2
-getAnalog KEYWORD2
-setDigital KEYWORD2
-getDigital KEYWORD2
-waitTillHigh KEYWORD2
-waitTillLow KEYWORD2
+getPin	KEYWORD2
+setMode	KEYWORD2
+setHigh	KEYWORD2
+setLow	KEYWORD2
+setAnalog	KEYWORD2
+isHigh	KEYWORD2
+isLow	KEYWORD2
+getAnalog	KEYWORD2
+setDigital	KEYWORD2
+getDigital	KEYWORD2
+waitTillHigh	KEYWORD2
+waitTillLow	KEYWORD2
 
 #Motor
-setDirection KEYWORD2
-setSpeed KEYWORD2
-stop KEYWORD2
+setDirection	KEYWORD2
+setSpeed	KEYWORD2
+stop	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
 #######################################
 
-MOTOR_FORWARD LITERAL1
-MOTOR_BACKWARD LITERAL1
+MOTOR_FORWARD	LITERAL1
+MOTOR_BACKWARD	LITERAL1
