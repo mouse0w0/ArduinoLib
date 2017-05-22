@@ -6,71 +6,75 @@
 class Pin{
     private:
     
-    Pin(){}
+        Pin(){
+            
+        }
     
-    int pin;
-    int mode;
+    protected:
+    
+        int pin;
+        int mode;
     
     public:
     
-    Pin(int pin){
-        this->pin=pin;
-        setMode(INPUT);
-    }
-    
-    Pin(int pin,int mode){
-        this->pin=pin;
-        setMode(mode);
-    }
-    
-    int getPin(){
-        return this->pin;
-    }
-    
-    void setMode(int mode){
-        this->mode=mode;
-        pinMode(this->pin,mode);
-    }
-    
-    int getAnalog(){
-        return analogRead(this->pin);
-    }
-    
-    void setAnalog(int value){
-        analogWrite(this->pin,value);
-    }
-    
-    int getDigital(){
-        return digitalRead(this->pin);
-    }
-    
-    void setDigital(int value){
-        digitalWrite(this->pin,value);
-    }
-    
-    void setHigh(){
-        digitalWrite(this->pin,HIGH);
-    }
-    
-    void setLow(){
-        digitalWrite(this->pin,LOW);
-    }
-    
-    bool isHigh(){
-        return digitalRead(this->pin)==HIGH;
-    }
-    
-    bool isLow(){
-        return digitalRead(this->pin)==LOW;
-    }
-    
-    void waitTillHigh(){
-        while(isLow());
-    }
-    
-    void waitTillLow(){
-        while(isHigh());
-    }
+        Pin(int pin){
+            this->pin=pin;
+            setMode(INPUT);
+        }
+
+        Pin(int pin,int mode){
+            this->pin=pin;
+            setMode(mode);
+        }
+
+        int getPin(){
+            return this->pin;
+        }
+
+        void setMode(int mode){
+            this->mode=mode;
+            pinMode(this->pin,mode);
+        }
+
+        int getAnalog(){
+            return analogRead(this->pin);
+        }
+
+        void setAnalog(int value){
+            analogWrite(this->pin,value);
+        }
+
+        int getDigital(){
+            return digitalRead(this->pin);
+        }
+
+        void setDigital(int value){
+            digitalWrite(this->pin,value);
+        }
+
+        void setHigh(){
+            digitalWrite(this->pin,HIGH);
+        }
+
+        void setLow(){
+            digitalWrite(this->pin,LOW);
+        }
+
+        bool isHigh(){
+            return digitalRead(this->pin)==HIGH;
+        }
+
+        bool isLow(){
+            return digitalRead(this->pin)==LOW;
+        }
+
+        void waitTillHigh(){
+            while(isLow());
+        }
+
+        void waitTillLow(){
+            while(isHigh());
+        }
 };
 
 #define MOTOR_FORWARD 0X01
@@ -79,28 +83,32 @@ class Pin{
 class Motor{
     private:
     
-    Motor(){}
+        Motor(){
+            
+        }
     
-    Pin directionPin;
-    Pin speedPin;
+    protected:
+    
+        Pin directionPin;
+        Pin speedPin;
     
     public:
     
-    Motor(int directionPin,int speedPin){
-        this->directionPin=Pin(directionPin,OUTPUT);
-        this->speedPin=Pin(speedPin,OUTPUT);
-    }
-    
-    void setDirection(int direction){
-        this->directionPin.setDigital(direction);
-    }
-    
-    void setSpeed(int speed){
-        this->speedPin.setAnalog(speed);
-    }
-    
-    void stop(){
-        setSpeed(0);
-    }
+        Motor(int directionPin,int speedPin){
+            this->directionPin=Pin(directionPin,OUTPUT);
+            this->speedPin=Pin(speedPin,OUTPUT);
+        }
+
+        void setDirection(int direction){
+            this->directionPin.setDigital(direction);
+        }
+
+        void setSpeed(int speed){
+            this->speedPin.setAnalog(speed);
+        }
+
+        void stop(){
+            setSpeed(0);
+        }
 };
 #endif
