@@ -41,7 +41,7 @@ class Pin{
     }
     
     int getDigital(){
-        return digitalRead(this->pin,value);
+        return digitalRead(this->pin);
     }
     
     void setDigital(int value){
@@ -92,11 +92,11 @@ class Motor{
     }
     
     void setDirection(int direction){
-        directionPin.setDigital(direction);
+        this->directionPin.setDigital(direction);
     }
     
     void setSpeed(int speed){
-        speedPin.setAnalog(speed);
+        this->speedPin.setAnalog(speed);
     }
     
     void stop(){
